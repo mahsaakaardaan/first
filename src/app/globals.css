@@ -1,5 +1,9 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'leaflet/dist/leaflet.css';
 
+* {
+  direction: rtl;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -10,17 +14,36 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --animate-expand: expand 0.2s ease-in-out;
+  @keyframes expand {
+    0% {
+      transform: scaleX(0);
+    }
+  
+    100% {
+      transform: scaleX(1);
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --purple: #7e22ce;
+    --semi_purple: #e9d5ff;
   }
+}
+
+@font-face {
+  font-family: 'Zain';
+  src: url('/fonts/Zain-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Zain, sans-serif;
 }
