@@ -28,7 +28,7 @@ type Props = {
 };
 
 async function page({ params }: Props) {
-  const { productId } = await params;
+  const { productId } = params;
   const data: ProductsType = await getProductById(productId);
 
   return (
