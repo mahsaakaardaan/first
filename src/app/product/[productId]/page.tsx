@@ -23,12 +23,12 @@ import AddCommentButton from './components/AddCommentButton';
 
 type Props = {
   params: {
-    productId: number;
+    productId: string;
   };
 };
 
 async function page({ params }: Props) {
-  const { productId } = params;
+  const productId = Number(params.productId);
   const data: ProductsType = await getProductById(productId);
 
   return (
