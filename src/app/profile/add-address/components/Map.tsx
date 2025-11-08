@@ -24,11 +24,14 @@ L.Icon.Default.mergeOptions({
   shadowUrl
 });
 
-type Props = {};
+type Props = {
+  address: any;
+  setAddress: React.Dispatch<React.SetStateAction<any>>;
+};
 
 function Map({ address, setAddress }: Props) {
   // const [address, setAddress] = useState(null);
-  const position = [35.6997, 51.338];
+  const position: [number, number] = [35.6997, 51.338];
 
   function LocationMarker() {
     const map = useMapEvents({

@@ -10,7 +10,7 @@ async function CommentsSection({ productId }: Props) {
   const comments = await getProductComments(productId);
   return (
     <div>
-      {comments.map((item, index) => (
+      {comments.map((item: any, index: number) => (
         <CommentCard key={index} data={item} />
       ))}
     </div>

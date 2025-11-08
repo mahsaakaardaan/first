@@ -7,7 +7,6 @@ type Props = {
   placeholder?: string;
   ref?: any;
   onClick?: () => void;
-  onChange?: () => void;
   value?: string;
   showButton?: boolean
 } & React.InputHTMLAttributes<HTMLInputElement>;

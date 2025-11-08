@@ -5,10 +5,13 @@ import Input from '@/component/uikit/Input';
 import Button from '@/component/uikit/Button';
 import { updateAddressAction } from './actions';
 
-type Props = {};
+type Props = {
+  data: any;
+  address_id: string;
+};
 
 function AddressForm({ data, address_id }: Props) {
-  const [address, setAddress] = useState(null);
+  const [address, setAddress] = useState<any>(null);
 
   useEffect(() => {
     setAddress([data.lat, data.lang]);

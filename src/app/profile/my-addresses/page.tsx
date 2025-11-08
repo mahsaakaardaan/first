@@ -15,7 +15,7 @@ async function page({}: Props) {
       <Button text='افزودن آدرس جدید' width='w-contain p-5' href="/profile/add-address" />
     </div>
     <div>
-      {userAddresses.map((item,index) => <AddressCard key={index} data={item} />)}
+      {userAddresses.map((item:any,index:number) => <AddressCard key={index} data={item} />)}
       </div>
   </div>;
 }

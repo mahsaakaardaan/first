@@ -8,7 +8,12 @@ const Map = dynamic(() => import('./Map'), {
   loading: () => <p>Loading map...</p>
 });
 
-export default function MapWrapper({ address, setAddress }) {
+type Props = {
+  address: any;
+  setAddress: React.Dispatch<React.SetStateAction<any>>;
+};
+
+export default function MapWrapper({ address, setAddress }: Props) {
   return (
     <Suspense fallback={<p>Loading map...</p>}>
       <Map {...{ address, setAddress }} />

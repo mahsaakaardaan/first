@@ -20,6 +20,7 @@ export const OrderProvider = ({
   children: ReactNode;
   token: string;
   currents: any[];
+  user?: any;
 }) => {
   const [currentOrders, setCurrentOrders] = useState<any[]>([]);
   const setCurrentOrders2 = useCurrentOrdersStore(

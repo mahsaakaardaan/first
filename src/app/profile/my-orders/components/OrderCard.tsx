@@ -3,7 +3,10 @@ import Link from 'next/link';
 import React from 'react';
 import { FiChevronLeft } from 'react-icons/fi';
 
-type Props = {};
+type Props = {
+  data: any;
+  label: any;
+};
 
 function OrderCard({ data }: Props) {
   const total_price = data?.order_items?.reduce(
@@ -36,7 +39,7 @@ function OrderCard({ data }: Props) {
           </div>
         </div>
         <div className="flex items-center gap-4 mt-4">
-          {data.order_items.map((item, index) => (
+          {data.order_items.map((item:any, index:number) => (
             <div key={index} className="relative w-[50px] h-[50px]">
               <Image
                 src={item.order_product.thumbnail}

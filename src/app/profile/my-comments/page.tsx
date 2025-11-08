@@ -11,7 +11,7 @@ async function page({}: Props) {
     <div className="p-4">
       <span>دیدگاه‌های من</span>
       <div>
-        {myComments.map((item, index) => (
+        {myComments.map((item:any, index:number) => (
           <CommentCard key={index} data={item} />
         ))}
       </div>

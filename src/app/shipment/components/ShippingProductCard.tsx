@@ -9,7 +9,9 @@ import {
 } from '../actions';
 import { useCurrentOrdersStore } from '@/lib/store/CurrentOrdersStore';
 
-type Props = {};
+type Props = {
+  data: any
+};
 
 function ShippingProductCard({ data }: Props) {
   const [count, setCount] = useState(data.quantity);

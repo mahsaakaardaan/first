@@ -21,14 +21,8 @@ import MobilePrice from './components/MobilePrice';
 import CommentsSection from './components/CommentsSection';
 import AddCommentButton from './components/AddCommentButton';
 
-type Props = {
-  params: {
-    productId: string;
-  };
-};
-
-async function page({ params }: Props) {
-  const productId = Number(params.productId);
+export default async function Page({ params }: {params: any}) {
+  const { productId } = await params;
   const data: ProductsType = await getProductById(productId);
 
   return (
@@ -104,7 +98,10 @@ async function page({ params }: Props) {
                         <span>۵ دیدگاه</span>
                       </Link>
                     </div>
-                    <ColorVariants variants={data?.variants} product={data} />
+                    <ColorVariants
+                      variants={data?.variants}
+                      product={data}
+                    />
                   </div>
                   {/* footer of top section */}
                   <div className="flex items-center gap-2">
@@ -136,9 +133,9 @@ async function page({ params }: Props) {
                   <AddCommentButton />
                 </div>
                 <Suspense fallback={<p>loading</p>}>
-                <div className="w-full flex-2/3">
-                  <CommentsSection productId={productId} />
-                </div>
+                  <div className="w-full flex-2/3">
+                    <CommentsSection productId={productId} />
+                  </div>
                 </Suspense>
               </div>
             </div>
@@ -158,5 +155,3 @@ async function page({ params }: Props) {
     </ColorProvider>
   );
 }
-
-export default page;

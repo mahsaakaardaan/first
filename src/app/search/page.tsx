@@ -4,11 +4,11 @@ import { getAllCategories, getSearchedProducts } from '@/lib/api';
 import { ProductsType, SubCategoryType } from '@/lib/types';
 import SProductCard from './components/SProductCard';
 
-type Props = {
-  searchParams: { [key: string]: string | undefined };
-};
+// type Props = {
+//   searchParams: { [key: string]: string | undefined };
+// };
 
-async function page({ searchParams }: Props) {
+export default async function Page({ searchParams }: {searchParams: any}) {
   const { category, subCategory, q} = await searchParams;
 
   
@@ -46,5 +46,3 @@ async function page({ searchParams }: Props) {
     </div>
   );
 }
-
-export default page;

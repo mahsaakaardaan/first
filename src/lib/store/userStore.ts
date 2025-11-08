@@ -11,11 +11,11 @@ type userType = {
   country?: string;
   city?: string;
   
-};
+} | any;
 
 type useUserStoreType = {
-  user?: userType;
-  setUser?: (user: userType) => void;
+  user: userType;
+  setUser: (user: userType) => void;
 };
 
 export const useUserStore = create<useUserStoreType>((set) => ({

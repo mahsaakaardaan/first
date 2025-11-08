@@ -4,7 +4,9 @@ import Link from 'next/link';
 
 import React from 'react';
 
-type Props = {};
+type Props = {
+  data: any
+};
 
 function OrderProductCard({ data }: Props) {
   // TODO: add comment from here

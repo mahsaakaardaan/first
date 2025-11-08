@@ -2,7 +2,9 @@ import Image from 'next/image';
 import React from 'react';
 import { FiStar } from 'react-icons/fi';
 
-type Props = {};
+type Props = {
+  data: any;
+};
 
 function CommentCard({ data }: Props) {
   return (

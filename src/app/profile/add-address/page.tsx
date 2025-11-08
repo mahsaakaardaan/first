@@ -8,7 +8,7 @@ import { AddAddressAction } from './actions';
 type Props = {};
 
 function page({}: Props) {
-  const [address, setAddress] = useState(null);
+  const [address, setAddress] = useState<any>(null);
   return (
     <div className="w-full">
       <MapWrapper {...{ address, setAddress }} />

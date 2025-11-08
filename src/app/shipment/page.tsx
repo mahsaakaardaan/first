@@ -19,7 +19,7 @@ async function page({}: Props) {
     0
   );
 
-  const tt = orders.map((item, index) => ({
+  const tt = orders.map((item: any, index:number) => ({
     product_id: item?.product_id,
     quantity: item.quantity,
     price_is: (item.price * (100 - item.product.off)) / 100,

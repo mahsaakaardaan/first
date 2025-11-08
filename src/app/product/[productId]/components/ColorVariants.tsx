@@ -6,7 +6,7 @@ import { useCommentStore } from '@/lib/store/CommentStore';
 
 type Props = {
   variants: VariantType[];
-  data: ProductsType;
+  product: ProductsType;
 };
 
 function ColorVariants({ variants, product }: Props) {

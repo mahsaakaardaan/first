@@ -3,7 +3,9 @@ import Link from 'next/link';
 import React from 'react';
 import { FiCheckCircle } from 'react-icons/fi';
 
-type Props = {};
+type Props = {
+  data: any;
+};
 
 function CommentCard({ data }: Props) {
   return (

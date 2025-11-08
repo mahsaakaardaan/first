@@ -37,7 +37,7 @@ export const getProducts = async (): Promise<ProductsType[]> => {
 };
 
 export const getProductById = async (
-  id: number
+  id: string
 ): Promise<ProductsType> => {
   const { data } = await api.get(`/product/single/${id}`, {
     headers: noCacheHeaderConfig
@@ -308,7 +308,7 @@ export const countCurrentOrder = async (
     });
 
     return data.data;
-  } catch (error) {
+  } catch (error: any) {
     console.log(
       'first',
       error.response?.status,
@@ -329,7 +329,7 @@ export const submitOrder = async (body: OrderProductsType) => {
       }
     });
     return data.data;
-  } catch (error) {
+  } catch (error: any) {
     console.log(
       'first errorrrrr',
       error.response?.status,
@@ -356,7 +356,7 @@ export const getAllOrders = async (status = 'pending') => {
       }
     );
     return data.data;
-  } catch (error) {
+  } catch (error: any) {
     console.log(
       'pppppppp',
       error.response?.status,
@@ -377,7 +377,7 @@ export const getOrderById = async (orderId: string) => {
       }
     });
     return data.data;
-  } catch (error) {
+  } catch (error: any) {
     console.log(
       'pppppppp',
       error.response?.status,
@@ -404,7 +404,7 @@ export const getProductComments = async (product_id: string) => {
   return data.data;
 };
 
-export const addComment = async (body) => {
+export const addComment = async (body: any) => {
   const token = (await cookies()).get('access_token')?.value;
   const {data} = await api.post('/comment/add-comment', body, {
     withCredentials: true,

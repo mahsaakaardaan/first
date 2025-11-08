@@ -1,9 +1,9 @@
 'use client'
-import { createContext, useContext, useState } from 'react';
+import { ReactNode, createContext, useContext, useState } from 'react';
 
-export const CommentContext = createContext();
+export const CommentContext = createContext({});
 
-export const CommentProvider = ({ children }) => {
+export const CommentProvider = ({ children }:{children: ReactNode}) => {
   const [commentData, setCommentData] = useState({});
 
   return (

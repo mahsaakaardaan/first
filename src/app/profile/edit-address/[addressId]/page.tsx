@@ -2,9 +2,8 @@ import React from 'react';
 import AddressForm from './AddressForm';
 import { getAddressById } from '@/lib/api';
 
-type Props = {};
 
-async function page({ params }: Props) {
+export default async function page({ params }:{params: any}) {
   const { addressId } = await params;
   const res = await getAddressById({ address_id: addressId });
 
@@ -15,4 +14,3 @@ async function page({ params }: Props) {
   );
 }
 
-export default page;

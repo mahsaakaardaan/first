@@ -5,7 +5,9 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import { FiSearch } from 'react-icons/fi';
 
-type Props = {};
+type Props = {
+  data: any;
+};
 
 function SearchedItemInModal({ data }: Props) {
   const router = useRouter();

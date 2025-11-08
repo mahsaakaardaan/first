@@ -5,7 +5,7 @@ import UserInfo from '../../components/UserInfo';
 
 type Props = {};
 
-async function page({ params }: Props) {
+async function page({ params }: {params: any}) {
   const { orderId } = await params;
   const order = await getOrderById(orderId);
   
@@ -30,7 +30,7 @@ async function page({ params }: Props) {
         <p>سود شما: ۳۴۹۵۹ تومان</p>
       </div>
       <div>
-        {order[0].order_items?.map((item, index) => (
+        {order[0].order_items?.map((item:any, index:number) => (
           <OrderProductCard key={index} data={item} />
         ))}
       </div>
