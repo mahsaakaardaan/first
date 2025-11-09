@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
 
   // ✅ تعیین آدرس اصلی سایت از .env یا URL فعلی
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || request.nextUrl.origin;
+    'http://46.34.163.193:3335' || request.nextUrl.origin;
 
   // 🔒 اگر کاربر لاگین نکرده و داره مسیر محافظت‌شده رو باز می‌کنه
   if (!isLoggedIn && isProtected) {
@@ -31,7 +31,8 @@ export function middleware(request: NextRequest) {
 
   // 🧭 اگر کاربر لاگین کرده ولی روی صفحه لاگینه → بفرستش به callbackUrl یا صفحه اصلی
   if (isLoggedIn && currentPath === '/login') {
-    const callbackUrl = request.nextUrl.searchParams.get('callbackUrl');
+    const callbackUrl =
+      request.nextUrl.searchParams.get('callbackUrl');
 
     const redirectUrl = callbackUrl
       ? new URL(callbackUrl, baseUrl)
@@ -48,6 +49,6 @@ export const config = {
     '/profile/:path*',
     '/shipment/:path*',
     '/add-comment/:path*',
-    '/login',
-  ],
+    '/login'
+  ]
 };
