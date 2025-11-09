@@ -27,7 +27,7 @@ export function middleware(request: NextRequest) {
     const callbackUrl =
       request.nextUrl.searchParams.get('callbackUrl');
 
-      const baseUrl = 'http://46.34.163.193:3335' || request.nextUrl.origin;
+      const baseUrl = 'http://46.34.163.193:3335'
 
       
     const redirectUrl = callbackUrl
