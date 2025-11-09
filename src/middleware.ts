@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export function middleware(request: NextRequest) {
   //TODO: api
   const isLoggedIn = Boolean(request.cookies.get('access_token'));
-  const baseUrl = 'http://46.34.163.193:3335';
+  const baseUrl = 'http://46.34.163.193:3000';
   // const baseUrl = 'http://localhost:3000';
 
   const protectedPaths = ['/profile', '/shipment', '/add-comment'];
