@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export function middleware(request: NextRequest) {
   //TODO: api
   const isLoggedIn = Boolean(request.cookies.get('access_token'));
+  const baseUrl = 'http://46.34.163.193:3335';
 
   const protectedPaths = ['/profile', '/shipment', '/add-comment'];
   const currentPath = request.nextUrl.pathname;
@@ -13,12 +14,12 @@ export function middleware(request: NextRequest) {
   );
 
   if (!isLoggedIn && isProtected) {
-    const loginURL = new URL('/login', request.url);
+    const loginURL = new URL('/login', baseUrl);
     loginURL.searchParams.set(
       'callbackUrl',
       currentPath.includes('/add-comment')
         ? request.headers.get('referer') || '/'
-        : request.url
+        : baseUrl
     );
     return NextResponse.redirect(loginURL);
   }
@@ -27,7 +28,8 @@ export function middleware(request: NextRequest) {
     const callbackUrl =
       request.nextUrl.searchParams.get('callbackUrl');
 
-      const baseUrl = 'http://46.34.163.193:3335'
+      
+      
 
       
     const redirectUrl = callbackUrl
