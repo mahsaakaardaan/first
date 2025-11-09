@@ -4,7 +4,7 @@ import Input from '../uikit/Input';
 import { FiBell } from 'react-icons/fi';
 import { FiUser } from 'react-icons/fi';
 import { FiShoppingCart } from 'react-icons/fi';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useSearch } from '@/app/search/components/searchContext';
 import { useCurrentOrdersStore } from '@/lib/store/CurrentOrdersStore';
 
@@ -21,8 +21,12 @@ export default function Navbar() {
     q: searched
   });
 
+  const pathName = usePathname();
+  const hiddenPaths = ['/login'];
+  const shouldHide = hiddenPaths.includes(pathName);
+
   return (
-    <div className="flex items-center justify-between p-4">
+    <div className={`flex items-center justify-between p-4 ${shouldHide ? 'hidden' : ''}`}>
       <div className="flex items-center gap-4 flex-1">
         {/* <Link href="/search"> */}
         <Link className="hidden md:block" href="/">

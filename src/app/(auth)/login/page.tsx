@@ -40,11 +40,11 @@ function Login({}: Props) {
 
   return (
     <div className="w-full h-screen flex items-center justify-center">
-      <div className="md:w-[50%] w-[90%]">
+      <div className="md:w-[50%] w-[90%] mb-50">
         <span className="">ورود و ثبت نام</span>
         <form
           onSubmit={loginAction}
-          className="flex flex-col gap-6 mt-6">
+          className="flex flex-col gap-6 mt-6 items-center">
           <Input
             placeholder="۰۹---------"
             name="phone_number"
