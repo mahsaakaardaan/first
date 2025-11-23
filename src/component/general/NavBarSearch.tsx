@@ -26,11 +26,11 @@ function NavBarSearch({}: Props) {
   const searchRequest = useSearchRequest();
 
   const openModal = () => {
-    router.push(`${pathname}?search=1`, { shallow: true });
+    router.push(`${pathname}?search=1`);
   };
 
   const closeModal = () => {
-    router.push(pathname, { shallow: true });
+    router.push(pathname);
   };
 
   useOutSideClick(inputRef, () => closeModal());

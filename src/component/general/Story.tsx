@@ -20,11 +20,11 @@ function Story({ data }: { data: any }) {
   const modalOpen = searchParams.get('story_id') == data.story_id;
 
   const openModal = () => {
-    router.push(`${pathname}?story_id=${data.story_id}`, { shallow: true });
+    router.push(`${pathname}?story_id=${data.story_id}`);
   };
 
   const closeModal = () => {
-    router.push(pathname, { shallow: true });
+    router.push(pathname);
   };
 
   const ref = useRef(null);

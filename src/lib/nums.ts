@@ -5,6 +5,6 @@ export function toFaDigits(input: any) {
     const str = input.toString();
   
     // تبدیل همه اعداد انگلیسی به فارسی
-    return str.replace(/[0-9]/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+    return str.replace(/[0-9]/g, (d:any) => "۰۱۲۳۴۵۶۷۸۹"[d]);
   }
   
