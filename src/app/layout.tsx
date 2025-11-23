@@ -9,6 +9,7 @@ import { OrderProvider } from './product/[productId]/components/orderContext';
 import { cookies } from 'next/headers';
 import { getOrders, getUser } from '@/lib/api';
 import MobileBackNav from '@/component/general/MobileBackNav';
+import FaNumberProvider from '@/component/general/FaNamberProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -49,19 +50,24 @@ export default async function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased max-md:mb-[200px]`}>
-        <OrderProvider token={token} currents={currents} user={user}>
-          <CommentProvider>
-            <SearchProvider>
-              <MobileBackNav />
-              <Navbar />
-              {children}
-              {storyModal}
-              {commentModal}
-              {searched}
-              <BottomTabBar />
-            </SearchProvider>
-          </CommentProvider>
-        </OrderProvider>
+        <FaNumberProvider>
+          <OrderProvider
+            token={token}
+            currents={currents}
+            user={user}>
+            <CommentProvider>
+              <SearchProvider>
+                <MobileBackNav />
+                <Navbar />
+                {children}
+                {storyModal}
+                {commentModal}
+                {searched}
+                <BottomTabBar />
+              </SearchProvider>
+            </CommentProvider>
+          </OrderProvider>
+        </FaNumberProvider>
       </body>
     </html>
   );

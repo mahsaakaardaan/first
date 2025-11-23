@@ -29,7 +29,7 @@ function page({}: Props) {
           onClick={() => setStatus('pending')}
           className={`w-full pb-4 flex items-center flex-col justify-center ${
             status == 'pending'
-              ? 'border-b-2 border-b-purple-300'
+              ? 'border-b-2 border-b-semi-green'
               : 'border-0'
           }`}>
           <FiRadio
@@ -39,7 +39,7 @@ function page({}: Props) {
           <span
             className={`${
               status == 'pending'
-                ? 'text-purple-300 text-[1.1em]'
+                ? 'text-semi-green text-[1.1em]'
                 : ''
             }`}>
             جاری
@@ -49,13 +49,13 @@ function page({}: Props) {
           onClick={() => setStatus('done')}
           className={`w-full pb-4 flex items-center flex-col justify-center  ${
             status == 'done'
-              ? 'border-b-2 border-b-purple-300'
+              ? 'border-b-2 border-b-semi-green'
               : 'border-0'
           }`}>
           <FiSend className="w-[30px] h-[30px] text-green-500" />
           <span
             className={`${
-              status == 'done' ? 'text-purple-300 text-[1.1em]' : ''
+              status == 'done' ? 'text-semi-green text-[1.1em]' : ''
             }`}>
             تحویل شده
           </span>
@@ -64,13 +64,13 @@ function page({}: Props) {
           onClick={() => setStatus('return')}
           className={`w-full pb-4 flex items-center flex-col justify-center ${
             status == 'return'
-              ? 'border-b-2 border-b-purple-300'
+              ? 'border-b-2 border-b-semi-green'
               : 'border-0'
           }`}>
           <FiShuffle className="w-[30px] h-[30px] text-yellow-300" />
           <span
             className={`${
-              status == 'return' ? 'text-purple-300 text-[1.1em]' : ''
+              status == 'return' ? 'text-semi-green text-[1.1em]' : ''
             }`}>
             مرجوع شده
           </span>
@@ -79,13 +79,13 @@ function page({}: Props) {
           onClick={() => setStatus('cancel')}
           className={`w-full pb-4 flex items-center flex-col justify-center ${
             status == 'cancel'
-              ? 'border-b-2 border-b-purple-300'
+              ? 'border-b-2 border-b-semi-green'
               : 'border-0'
           }`}>
           <FiXOctagon className="w-[30px] h-[30px] text-red-400" />
           <span
             className={`${
-              status == 'cancel' ? 'text-purple-300 text-[1.1em]' : ''
+              status == 'cancel' ? 'text-semi-green text-[1.1em]' : ''
             }`}>
             لغو شده
           </span>

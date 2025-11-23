@@ -59,7 +59,7 @@ function page({}: Props) {
               <div>
                 <p>{commentData?.product?.title}</p>
                 <>
-                  {commentData?.variant?.color == 'weight' ? <div className='py-1 px-4 bg-purple-300 rounded-2xl w-fit'>{commentData?.variant?.hex}</div> : <div
+                  {commentData?.variant?.color == 'weight' ? <div className='py-1 px-4 bg-main-green text-white rounded-2xl w-fit'>{commentData?.variant?.hex}</div> : <div
                     className="w-[20px] h-[20px] rounded-full border-[1px] border-gray-200 mt-4"
                     style={{
                       backgroundColor: commentData?.variant?.hex
@@ -79,7 +79,7 @@ function page({}: Props) {
             )}
             <label
               htmlFor="imageUpload"
-              className="w-[30px] h-[30px] rounded-full bg-purple-100 flex items-center justify-center my-4">
+              className="w-[30px] h-[30px] rounded-full bg-semi-green flex items-center justify-center my-4">
               <FiImage />
             </label>
             <input

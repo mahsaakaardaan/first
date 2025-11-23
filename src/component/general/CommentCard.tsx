@@ -1,3 +1,4 @@
+import { toFaDigits } from '@/lib/nums';
 import Image from 'next/image';
 import React from 'react';
 import { FiStar } from 'react-icons/fi';
@@ -16,8 +17,8 @@ function CommentCard({ data }: Props) {
         <div className="text-[12px] bg-green-400 py-1 px-4 rounded-xl text-white">
           خریدار
         </div>
-        <div className="text-gray-400 text-[12px]">
-          {data.comment_date} مرداد
+        <div className="text-gray-400 text-[12px] font-sans">
+          {toFaDigits(data.comment_date)} 
         </div>
       </div>
       <div className="flex items-center gap-1 mb-2">

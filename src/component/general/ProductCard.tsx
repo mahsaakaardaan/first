@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Price from './Price';
 import Link from 'next/link';
 import { ProductsType } from '@/lib/types';
+import { toFaDigits } from '@/lib/nums';
 
 export default function ProductCard({
   isFirst,

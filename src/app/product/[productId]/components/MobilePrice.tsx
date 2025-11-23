@@ -58,7 +58,7 @@ function MobilePrice({ data }: Props) {
         {isBought ? (
           <Button
             text="در سبد شما"
-            width="w-[50%] bg-transparent border-[1px] border-purple-200"
+            width="w-[50%] bg-transparent border-[1px] border-semi-green"
             onClick={() => router.push('/shipment')}
           />
         ) : (

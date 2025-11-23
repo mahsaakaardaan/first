@@ -51,7 +51,7 @@ function page({}: Props) {
   if (pathname !== '/searched') return null;
 
   return (
-    <div className="w-screen h-screen absolute top-15 left-0 z-40 flex justify-center ">
+    <div className="w-screen h-screen absolute top-15 left-0 z-40 flex justify-center">
       <div
         ref={ref}
         className="w-[70%] bg-white shadow-2xl rounded-2xl flex items-center justify-between py-[10px] absolute z-50 flex-col ">

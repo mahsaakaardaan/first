@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://46.34.163.193:3335';
+const BASE_URL = 'http://localhost:3335';
+// const BASE_URL = 'http://192.168.1.101/3335';
+// const BASE_URL = 'http://46.34.163.193:3335';
 axios.defaults.baseURL = BASE_URL;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 

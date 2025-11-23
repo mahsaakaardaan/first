@@ -9,7 +9,7 @@ import { FiUser } from 'react-icons/fi';
 
 function BottomTabBar() {
   return (
-    <div className="w-full flex items-center justify-between fixed z-50 bottom-0 left-0 border-t-[1px] border-t-gray-300 md:hidden bg-white">
+    <div className="w-full flex items-center justify-between fixed z-50 bottom-[env(safe-area-inset-bottom)] left-0 right-0 border-t-[1px] border-t-gray-300 md:hidden bg-white">
       <div className="flex flex-1 items-center justify-center  hover:bg-gray-100 py-6 cursor-pointer">
         <Link href={'/'}>
           <FiHome size={25} />

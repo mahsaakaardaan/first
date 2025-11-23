@@ -8,6 +8,7 @@ import {
   deleteCurrentOrderByIdAction
 } from '../actions';
 import { useCurrentOrdersStore } from '@/lib/store/CurrentOrdersStore';
+import { toFaDigits } from '@/lib/nums';
 
 type Props = {
   data: any
@@ -57,10 +58,10 @@ function ShippingProductCard({ data }: Props) {
             className="w-[20px] h-[20px] rounded-full overflow-hidden"
             style={{ backgroundColor: data.hex }}
           />
-          <span className="w-fit py-1 px-3 rounded-2xl bg-red-500 text-[12px] text-white">
-            {data.product.off}%
+          <span className="w-fit py-1 px-3 rounded-2xl bg-red-500 text-[12px] text-white font-sans font-bold">
+            {toFaDigits(data.product.off)}%
           </span>
-          <p>{(data.price * (100 - data.product.off)) / 100}تومان</p>
+          <p><span className='font-sans'>{toFaDigits((data.price * (100 - data.product.off)) / 100)}</span> تومان</p>
         </div>
       </Link>
       <div className="flex items-center gap-4 mt-4 justify-end">
@@ -75,7 +76,7 @@ function ShippingProductCard({ data }: Props) {
           className="w-[30px] h-[30px] rounded-xs bg-gray-200 flex items-center justify-center text-[1.6em]">
           -
         </button>
-        <span>{count}</span>
+        <span className='font-sans'>{toFaDigits(count)}</span>
         <button
         disabled
           onClick={onIncrement}

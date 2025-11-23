@@ -12,14 +12,15 @@ type Props = {
 export default function layout({ children }: Props) {
   return (
     <div className="w-full p-4">
-      <Navbar />
-      <div className="flex items-center justify-between border-b-[1px] border-gray-200 max-md:hidden">
-        <div className="my-4">
+      {/* <Navbar /> */}
+      <div className="flex items-center justify-between border-b-[1px] border-gray-200  max-md:hidden">
+        <div className="my-4 flex items-center gap-8">
           <UserInfo />
-        </div>
-        <Link href={'/profile/my-profile'}>
+          <Link href={'/profile/my-profile'}>
           <FiEdit3 className="text-sky-400" />
         </Link>
+        </div>
+        
       </div>
       <div className="w-full flex gap-4 ">
         <div className='max-md:hidden md:w-[35%]'>

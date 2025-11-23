@@ -28,7 +28,7 @@ function Button({
           onClick && onClick();
         }
       }}
-      className={`${width} py-2 bg-purple-300 rounded-xl my-2 cursor-pointer`}>
+      className={`${width} py-2 bg-semi-green rounded-xl my-2 cursor-pointer`}>
       {text}
       {children}
     </button>

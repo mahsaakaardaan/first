@@ -1,4 +1,5 @@
 import Button from '@/component/uikit/Button';
+import { toFaDigits } from '@/lib/nums';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -24,20 +25,20 @@ function OrderProductCard({ data }: Props) {
             />
           </div>
           <div className="flex flex-col justify-between h-[100px]">
-            <p>{data.order_product.title}</p>
+            <p className='font-bold'>{data.order_product.title}</p>
             {data.order_variant.color == 'weight' ? (
-              <div>{data.order_variant.hex}</div>
+              <div className='text-[.8rem] font-sans'>{toFaDigits(data.order_variant.hex)}</div>
             ) : (
               <div
                 className="w-[20px] h-[20px] rounded-full border-[1px] border-gray-200"
                 style={{ backgroundColor: data.order_variant.hex }}
               />
             )}
-            <div>{data.price_is} تومان</div>
+            <div className='text-gray-500 text-[0.9rem]'><span className='font-sans'>{toFaDigits(data.price_is)}</span> تومان</div>
           </div>
         </div>
       </Link>
-      <Button
+      {/* <Button
         text="افزودن کامنت"
         width="w-fill px-4 mt-4"
         // onClick={() => {
@@ -47,7 +48,7 @@ function OrderProductCard({ data }: Props) {
         //   });
         //   router.push('/add-comment');
         // }}
-      />
+      /> */}
     </div>
   );
 }

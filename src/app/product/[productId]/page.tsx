@@ -1,6 +1,4 @@
 import Nav from '@/component/general/Nav';
-import Navbar from '@/component/general/Navbar';
-import Button from '@/component/uikit/Button';
 import Image from 'next/image';
 import React, { Suspense } from 'react';
 import { FiHeart } from 'react-icons/fi';
@@ -10,9 +8,8 @@ import { FiBarChart2 } from 'react-icons/fi';
 import { FiList } from 'react-icons/fi';
 import { FiStar } from 'react-icons/fi';
 import { FiMessageCircle } from 'react-icons/fi';
-import CommentCard from '@/component/general/CommentCard';
 import Link from 'next/link';
-import { getProductById, getProductComments } from '@/lib/api';
+import { getProductById } from '@/lib/api';
 import { ProductsType } from '@/lib/types';
 import { ColorProvider } from './components/colorContext';
 import ColorVariants from './components/ColorVariants';
@@ -65,7 +62,7 @@ export default async function Page({ params }: {params: any}) {
                       {[...Array(4)].map((i, index) => (
                         <div
                           key={index}
-                          className="w-[50px] aspect-square relative border-[2px] border-purple-300 rounded-xl overflow-hidden">
+                          className="w-[50px] aspect-square relative border-[2px] border-semi-green rounded-xl overflow-hidden">
                           <Image
                             src={data?.thumbnail}
                             alt="product images"
@@ -79,8 +76,8 @@ export default async function Page({ params }: {params: any}) {
                 {/* second col --variants and information */}
                 <div className=" flex flex-col justify-between max-md:p-4">
                   <div>
-                    <p className="text-purple-300">
-                      {data.fa_name} / {data.fa_s_name}
+                    <p className="text-semi-green text-2xl">
+                      {data?.fa_name} / {data?.fa_s_name}
                     </p>
                     {/* <div>کیف دوشی زنانه پرتیزس مدل X4 - 157</div> */}
                     <p>{data?.title}</p>
@@ -89,13 +86,13 @@ export default async function Page({ params }: {params: any}) {
                     <div className="flex items-center gap-6">
                       <div className="flex items-center gap-2">
                         <FiStar />
-                        <span>۴.۵</span>
+                        <span className='font-sans'>۴.۵</span>
                       </div>
                       <Link
                         href={'#comments'}
                         className="flex items-center gap-2 bg-gray-300 py-1 px-3 rounded-2xl">
                         <FiMessageCircle />
-                        <span>۵ دیدگاه</span>
+                        <span><span className='font-sans'>۵</span> دیدگاه</span>
                       </Link>
                     </div>
                     <ColorVariants
@@ -118,7 +115,7 @@ export default async function Page({ params }: {params: any}) {
             </div>
             <div className="p-4 mt-6 border-b-[1px] border-gray-200">
               <span>معرفی</span>
-              <p>{data.description}</p>
+              <p>{data?.description}</p>
             </div>
             <div className="p-4 my-6" id="comments">
               <div className="mb-6">
@@ -128,7 +125,7 @@ export default async function Page({ params }: {params: any}) {
                 <div className="w-[30%] h-[30%] max-md:w-full md:sticky md:top-4 p-4 bg-white border-[1px] border-gray-300 rounded-2xl">
                   <div className="flex items-center gap-2">
                     <FiStar />
-                    <span>۴.۵</span>
+                    <span className='font-sans'>۴.۵</span>
                   </div>
                   <AddCommentButton />
                 </div>

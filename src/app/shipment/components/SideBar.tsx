@@ -2,6 +2,7 @@
 import Button from '@/component/uikit/Button';
 import React, { useEffect, useState, useTransition } from 'react';
 import { submitOrderAction } from '../actions';
+import { toFaDigits } from '@/lib/nums';
 
 type Props = {
   data: number;
@@ -31,7 +32,7 @@ function SideBar({ data, orders }: Props) {
   return (
     <div className="max-md:hidden w-[30%] bg-gray-100 rounded-2xl p-4 sticky top-4 left-4">
       <p>مبلغ کل</p>
-      <p>{data}تومان</p>
+      <p><span className='font-sans'>{toFaDigits(data)}</span> تومان</p>
       <Button text="تکمیل خرید و پرداخت" onClick={onClick} />
     </div>
   );

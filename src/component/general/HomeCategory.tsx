@@ -26,7 +26,7 @@ function HomeCategory({ data }: Props) {
             key={index}
             className={`w-full flex items-center gap-2 py-3 pr-1 border-b-[1px] border-b-gray-200 cursor-pointer ${
               hoveredData?.id == item?.id
-                ? 'bg-white text-purple-400'
+                ? 'bg-white text-semi-green'
                 : ''
             } `}>
             <Icon icon={item.en_name as any} />
@@ -42,8 +42,8 @@ function HomeCategory({ data }: Props) {
               query: { subCategory: item.fa_s_name }
             }}
             key={index}
-            className="flex items-center gap-1 py-2 my-2 cursor-pointer hover:text-purple-300">
-            <div className="w-[2px] h-[15px] bg-purple-300" />
+            className="flex items-center gap-1 py-2 my-2 cursor-pointer hover:text-semi-green">
+            <div className="w-[2px] h-[15px] bg-semi-green" />
             <span className="text-[0.8em]">{item?.fa_s_name}</span>
           </Link>
         ))}

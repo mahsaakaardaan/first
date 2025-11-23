@@ -7,7 +7,7 @@ async function page({}: Props) {
   
   
   return (
-    <div className="w-full">
+    <div className="w-full h-[100vh]">
       <div className='md:hidden'>
         <SideBar />
       </div>

@@ -36,6 +36,31 @@ export const getProducts = async (): Promise<ProductsType[]> => {
   return data.data;
 };
 
+export const getAllStories = async () => {
+  const { data } = await api.get('/story');
+  return data.data;
+};
+
+export const getStoryById = async (story_id: string) => {
+  const { data } = await api.get(`/story/${story_id}`);
+  return data.data;
+};
+
+export const getAllBlogs = async () => {
+  const { data } = await api.get('/blog');
+  return data.data;
+};
+
+export const getBlogById = async (blog_id: string) => {
+  const { data } = await api.get(`/blog/${blog_id}`);
+  return data.data[0];
+};
+
+export const getIncredibleProducts = async () => {
+  const { data } = await api.get(`/product/incredible`);
+  return data.data;
+}
+
 export const getProductById = async (
   id: string
 ): Promise<ProductsType> => {
@@ -406,7 +431,7 @@ export const getProductComments = async (product_id: string) => {
 
 export const addComment = async (body: any) => {
   const token = (await cookies()).get('access_token')?.value;
-  const {data} = await api.post('/comment/add-comment', body, {
+  const { data } = await api.post('/comment/add-comment', body, {
     withCredentials: true,
     headers: {
       ...noCacheHeaderConfig,

@@ -9,19 +9,20 @@ export const addCommentAction = async (
   variant_id: string,
   path: string
 ) => {
+  const time = new Date();
+  const commentDate = time.toISOString();
   const comment = formData.get('comment');
   const file = formData.get('file') || null;
 
   const data = new FormData();
   data.append('product_id', product_id);
   data.append('variant_id', variant_id);
+  data.append('comment_date', commentDate);
   if (comment) {
     data.append('comment', comment);
   }
   if (file) {
     data.append('file', file);
-
-    
   }
 
   await addComment(data);

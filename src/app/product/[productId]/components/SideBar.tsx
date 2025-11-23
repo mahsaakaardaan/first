@@ -16,6 +16,8 @@ type Props = {
 
 function SideBar({ data }: Props) {
   const user = useUserStore((state) => state.user);
+  console.log('first',user);
+  
 
   const [isBought, setIsBought] = useState(false);
   const router = useRouter();
@@ -32,17 +34,20 @@ function SideBar({ data }: Props) {
   useEffect(() => {
     const _isBought = currentOrders2
       ? currentOrders2.some(
-          (i) => i.product_id == data.id && i.variant_id == color?.id
+          (i) => i.product_id == data?.id && i.variant_id == color?.id
         )
       : false;
     setIsBought(_isBought);
   }, [currentOrders2, color]);
 
   const handleAddToCard = () => {
-    if (user?.user_id) {
+    if (user?.phone_number) {
+      if (user.default_address_id == 0) {
+        router.push('/profile/add-address');
+      }
       startTransition(async () => {
         const body = {
-          product_id: data.id,
+          product_id: data?.id,
           variant_id: color?.id
         };
         addCurrentOrder(body);
@@ -57,14 +62,14 @@ function SideBar({ data }: Props) {
     <div className="max-md:hidden bg-gray-100 rounded-xl ml-4 p-2 mt-4 h-[20vh] sticky top-4">
       <div className="flex gap-2">
         <div className="relative min-w-[60px] max-w-[60px] h-[60px] rounded-xl overflow-hidden">
-          <Image src={data.thumbnail} alt="product image" fill />
+          <Image src={data?.thumbnail} alt="product image" fill />
         </div>
-        <p className="text-[12px] truncate">{data.title}</p>
+        <p className="text-[12px] truncate">{data?.title}</p>
       </div>
-      <Price off={data.off} price={color?.price} />
+      <Price off={data?.off} price={color?.price} />
       {isBought ? (
         <Button
-          width="border-[1px] border-solid border-purple-300 bg-transparent w-[90%]"
+          width="border-[1px] border-solid border-semi-green bg-transparent w-[90%]"
           text="در سبد شما"
           onClick={() => router.push('/shipment')}
         />

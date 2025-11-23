@@ -60,6 +60,7 @@ function Login({}: Props) {
             onChange={(e) =>
               setInput({ ...input, password: e.target.value })
             }
+            type="password"
           />
           <Button type="submit" text="ورود" />
         </form>

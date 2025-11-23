@@ -19,7 +19,7 @@
     0% {
       transform: scaleX(0);
     }
-  
+
     100% {
       transform: scaleX(1);
     }
@@ -33,6 +33,12 @@
     --purple: #7e22ce;
     --semi_purple: #e9d5ff;
   }
+}
+
+@theme {
+  --color-main-green: #2f4f10;
+  --color-semi-green: #9ab084a2;
+  --color-semi-brown: #593209;
 }
 
 @font-face {

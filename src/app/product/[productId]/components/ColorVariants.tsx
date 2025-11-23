@@ -24,13 +24,13 @@ function ColorVariants({ variants, product }: Props) {
   }, []);
   return (
     <div className="mt-6">
-      {variants[0]?.color == 'weight' ? (
+      {variants?.[0]?.color == 'weight' ? (
         <span>وزن</span>
       ) : (
         <span>رنگها</span>
       )}
       <div className="flex items-center gap-2 my-4">
-        {variants.map((item, index) => (
+        {variants?.map((item, index) => (
           <Fragment key={index}>
             {item.color == 'weight' ? (
               <div
@@ -42,9 +42,9 @@ function ColorVariants({ variants, product }: Props) {
                   }));
                 }}
                 key={index}
-                className={`bg-purple-200 py-1 px-4 rounded-2xl cursor-pointer ${
+                className={`bg-semi-green py-1 px-4 rounded-2xl cursor-pointer font-sans ${
                   color?.hex == item.hex
-                    ? 'border-[2px] border-purple-400'
+                    ? 'border-[2px] border-main-green'
                     : ''
                 }`}>
                 {item.hex}
@@ -61,7 +61,7 @@ function ColorVariants({ variants, product }: Props) {
                 key={index}
                 className={`w-[30px] h-[30px] rounded-full cursor-pointer border-[1px] border-gray-200 ${
                   color?.color == item.color
-                    ? 'border-[5px] border-purple-400'
+                    ? 'border-[5px] border-main-green'
                     : ''
                 }`}
                 style={{ backgroundColor: item?.hex }}

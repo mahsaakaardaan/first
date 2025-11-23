@@ -2,27 +2,33 @@ import { getOrderById } from '@/lib/api';
 import React from 'react';
 import OrderProductCard from './component/OrderProductCard';
 import UserInfo from '../../components/UserInfo';
+import moment from 'moment-jalaali';
+import { toFaDigits } from '@/lib/nums';
+
+moment.loadPersian({ usePersianDigits: true });
 
 type Props = {};
 
 async function page({ params }: {params: any}) {
   const { orderId } = await params;
   const order = await getOrderById(orderId);
+
+  const date = moment(order[0].order_date);
   
 
   return (
     <div>
       <p className="mb-4">جزيیات سفارش</p>
       <div className="flex items-center gap-4">
-        <p>کد پیگیری: {orderId}</p>
-        <p>تاریخ ثبت سفارش: {order[0].order_date}</p>
+        <p>کد پیگیری: <span className='text-green-600 font-sans'>{toFaDigits(orderId)}</span></p>
+        <p>تاریخ ثبت سفارش: <span className='text-green-600 font-sans'>{toFaDigits(date.fromNow())}</span></p>
       </div>
       <Separator />
       <div>
         <div className="flex items-center gap-4">
           <UserInfo />
         </div>
-        <p className='mt-4'>آدرس: {order[0].address.full_address}</p>
+        <p className='mt-4'>آدرس: <span className='text-sky-600'>{order[0].address.full_address}</span></p>
       </div>
       <Separator />
       <div className="flex items-center gap-4 mb-4">

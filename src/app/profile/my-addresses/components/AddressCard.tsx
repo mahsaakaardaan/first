@@ -13,6 +13,7 @@ import {
   deleteAddressAction,
   setDefaultAddressAction
 } from '../action';
+import { toFaDigits } from '@/lib/nums';
 
 type Props = {
   data: any;
@@ -103,7 +104,7 @@ function AddressCard({ data }: Props) {
 
       {/* Address details */}
       <p>{data.full_address}</p>
-      <p>{data.postal_code}</p>
+      <p className='font-sans'>{toFaDigits(data.postal_code)}</p>
     </div>
   );
 }
