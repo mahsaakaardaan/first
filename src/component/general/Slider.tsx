@@ -42,7 +42,7 @@ export default function Slider({
   }, [autoPlay, interval]);
 
   const handleSlideClick = (link?: string) => {
-    if (link) router.push('/search?q='+link);
+    if (link) router.push('/search?q=' + link);
   };
 
   return (
@@ -55,21 +55,25 @@ export default function Slider({
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-700 ${
-              isActive ? 'opacity-100 z-10 cursor-pointer' : 'opacity-0 z-0'
+              isActive
+                ? 'opacity-100 z-10 cursor-pointer'
+                : 'opacity-0 z-0'
             }`}
-            onClick={() => isActive && handleSlideClick(slide.search)}
-            >
-           
-              <Image
-                src={slide.image}
-                alt={slide.text}
-                fill
-                className="object-cover"
-                priority={index === 0}
-              />
-              <div className="absolute bottom-0 w-full bg-black/50 text-white text-center h-full  flex items-end justify-start">
-                <div className="lg:w-[20%] max-md:w-[70%] md:w-[40%] text-right mr-20 mb-8 text-xl">{slide.text}</div>
+            onClick={() =>
+              isActive && handleSlideClick(slide.search)
+            }>
+            <Image
+              src={slide.image}
+              alt={slide.text}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+            <div className="absolute bottom-0 w-full bg-black/50 text-white text-center h-full  flex items-end justify-start">
+              <div className="lg:w-[20%] max-md:w-[70%] md:w-[40%] text-right mr-20 mb-8 text-xl">
+                {slide.text}
               </div>
+            </div>
           </div>
         );
       })}

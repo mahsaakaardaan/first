@@ -41,6 +41,11 @@ export const getAllStories = async () => {
   return data.data;
 };
 
+export const getAllBanners = async () => {
+  const { data } = await api.get('/banner');
+  return data.data;
+};
+
 export const getStoryById = async (story_id: string) => {
   const { data } = await api.get(`/story/${story_id}`);
   return data.data;
@@ -59,7 +64,7 @@ export const getBlogById = async (blog_id: string) => {
 export const getIncredibleProducts = async () => {
   const { data } = await api.get(`/product/incredible`);
   return data.data;
-}
+};
 
 export const getProductById = async (
   id: string
