@@ -9,7 +9,7 @@ export function middleware(request: NextRequest) {
   );
 
   // 👇 دامنه‌ی سایتت (جایگزین کن با دامنه یا IP واقعی VPS)
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yourdomain.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
   if (!isLoggedIn && isProtected) {
     const loginURL = new URL('/login', baseUrl);
