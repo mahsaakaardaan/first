@@ -45,7 +45,7 @@ function page({}: Props) {
         <div className="w-[300px] h-[400px] relative rounded-2xl overflow-hidden">
           {typeof story?.image === 'string' &&
             story.image.trim() !== '' && (
-              <Image src={story.image} alt="story" fill />
+              <Image src={story.image} alt="story" fill /> 
             )}
         </div>
         <div className='w-full my-4 px-4'>
